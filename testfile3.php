@@ -2,7 +2,7 @@
 <!--TRY IT Connection configuration file-->
 <!--Connecting to database "smithside_backup"-->
 <!--and show its table using SHOW TABLES-->
-<!--Glad I found the code typo!-->
+<!--Object Oriented Style of mysqli-->
 <!--=========================================-->
 
 <?php
