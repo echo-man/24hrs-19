@@ -2,7 +2,7 @@
 <!--TRY IT Connection configuration file-->
 <!--Connecting to database "smithside_backup"-->
 <!--and show its table using SHOW TABLES-->
-<!--Object Oriented Style of mysqli-->
+<!--Procedural Style of mysqli-->
 <!--=========================================-->
 
 <?php
@@ -12,16 +12,16 @@
 	define("HOSTNAME", "localhost");
 	define("MYSQLDB", "smithside_backup");
 
-	$connection = @new mysqli(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
+	$connection = @mysqli_connect(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
 
-	if ($connection->connect_error) {
-		die('Connect Error: ' . $connection->connect_error);
+	if (mysqli_connect_error()) {
+		die('Connect Error: ' .mysqli_connect_error());
 	} else {
 		echo 'Congratulations! Successful connection to MySQL <br/>';
-		if ($result = $connection->query("SHOW TABLES")) {
-			$count = $result->num_rows;
+		if ($result = mysqli_query($connection, "SHOW TABLES")) {
+			$count = mysqli_num_rows($result);
 			echo 'Tables: ' .($count) .'<br />';
-			while ($row = $result->fetch_array()) {
+			while ($row = mysqli_fetch_array($result)) {
 				echo $row[0] .'<br />';
 			}
 		}
