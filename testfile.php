@@ -30,7 +30,7 @@
 	define("HOSTNAME", "localhost");
 	define("MYSQLDB", "smithside_backup");
 
-	$connection = @new mysqli(HOSTNAME, MYSQLUSER, MYSQLPASS);
+	$connection = @new mysqli(HOSTNAME, MYSQLUSER, MYSQLPASS, MYSQLDB);
 
 	if ($connection->connect_error) {
 		die('Connect Error: ' . $connection->connect_error);
