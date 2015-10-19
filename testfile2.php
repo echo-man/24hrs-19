@@ -1,7 +1,7 @@
 <!--=========================================-->
 <!--TRY IT Connection configuration file-->
 <!--Connecting to database "smithside_backup"-->
-<!--and show its table (SHOW TABLES)-->
+<!--and show its table using SHOW TABLES-->
 <!--=========================================-->
 
 <?php
@@ -17,11 +17,12 @@
 		die('Connect Error: ' . $connection->connect_error);
 	} else {
 		echo 'Congratulations! Successful connection to MySQL.' .'<br/>';
-		if ($result = $connection->query('SHOW TABLES')) {
+		if ($result = $connection->query("SHOW TABLES")) {
 			$count =$result->num_rows;
-			echo 'Tables: ($count)<br />';
+			//echo 'Tables: ($count)<br />';
+			echo 'Tables: ' .($count) .'<br />';
 			while ($row = $result->fetch_array()) {
-				echo $row[0]. '<br />';
+				echo $row[0] .'<br />';
 			}
 		}
 	}
