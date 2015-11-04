@@ -17,7 +17,7 @@
 	if (mysqli_connect_error()) {
 		die('Connect Error: ' .mysqli_connect_error());
 	} else {
-		echo 'Congratulations! Successful connection to MySQL <br/>';
+		echo 'Kudos! Successful connection to MySQL <br/>';
 		if ($result = mysqli_query($connection, "SHOW TABLES")) {
 			$count = mysqli_num_rows($result);
 			echo 'Tables: ' .($count) .'<br />';

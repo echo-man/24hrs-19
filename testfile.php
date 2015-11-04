@@ -19,9 +19,10 @@
 ?>
 
 
-<!--========================================-->
+<!--=========================================-->
 <!--TRY IT Connection configuration file-->
-<!--========================================-->
+<!--Connecting to database "smithside_backup"-->
+<!--=========================================-->
 
 <?php
 
@@ -35,7 +36,7 @@
 	if ($connection->connect_error) {
 		die('Connect Error: ' . $connection->connect_error);
 	} else {
-		echo 'Successful connection to MySQL';
+		echo 'Congratulations! Successful connection to MySQL.' .'<br/>';
 }
 
 ?>
